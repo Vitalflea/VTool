@@ -148,16 +148,22 @@ int APIENTRY WinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE /*previous_inst
 	freopen_s(&output, "CONOUT$", "w", stdout);
 	freopen_s(&output, "CONIN$", "r", stdin);
 
-	auto command_line_args = GetCommandLineArguements(cmd_line);
+	std::string path_ = cmd_line;
+	path_.erase(std::remove(path_.begin(), path_.end(), '"'), path_.end());
+	//auto command_line_args = GetCommandLineArguements(cmd_line);
+	//for (auto cmd : command_line_args) {
+
+		std::cout << cmd_line << '\n';
+	//}
 	//MessageBox(nullptr, command_line_args.at(0).c_str(), "File doesn't exist!", MB_OK);
 	
-	if (std::filesystem::exists(command_line_args.at(0).c_str()) == false) {
+	if (std::filesystem::exists(path_) == false) {
 
 		MessageBox(nullptr, "Please drag and drop your default.xbe onto the vtool.exe", "File doesn't exist!", MB_OK);
 		return 1;
 	}
 
-	auto xbe_path = std::filesystem::path(command_line_args.at(0));
+	auto xbe_path = std::filesystem::path(path_);
 
 	if (xbe_path.has_extension() == true && xbe_path.extension().string().compare(".xbe") != 0) {
 
