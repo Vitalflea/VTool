@@ -24,6 +24,7 @@ static LPDIRECT3DDEVICE9        g_pd3dDevice = NULL;
 static D3DPRESENT_PARAMETERS    g_d3dpp = {};
 
 namespace offsets {
+
 	constexpr auto tediz_bullet_color{ 0x5E7494 };
 	constexpr auto shc_bullet_color{ 0x5E7498 };
 }
