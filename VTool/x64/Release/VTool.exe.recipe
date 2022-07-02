@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ProjectOutputs />
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\Admin\Source\Repos\VTool\x64\Release\VTool.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
       <FullPath>C:\Users\Admin\source\repos\VTool\VLib\include\vlib.hpp</FullPath>
